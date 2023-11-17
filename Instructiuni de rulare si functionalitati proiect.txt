@@ -1,0 +1,24 @@
+Proiect Afaceri Electronice - BooksOnline
+Student: Romascu Denisa-Elena
+Program masterat: BDSA
+Grupa: 1143
+
+
+Pentru a rula proiectul:
+
+- In fisierul appsettings.json, trebuie modificat "ConnectionStrings", mai exact "AppDbConn". Serverul local pe care l-am folosit pentru proiect utilizeaza Windows Authentication.
+- In SQL Server Management Studio trebuie rulat scriptul "Seminar1Script.sql" pentru crearea bazei de date si a tabelelor din cadrul acesteia.
+
+
+Functionalitatile proiectului:
+
+- Pagina "Books" reprezinta pagina de "Home" a site-ului si contine o lista cu toate cartile din baza de date. Fiecare carte are optiunea "View Details", care deschide o noua pagina in care sunt prezentate toate detaliile cartii respective. Tot aici cartea poate fi adaugata ("Add") in cosul de cumparaturi, o data sau de mai multe ori, fara a fi nevoie de autentificare. De asemenea, exista si optiunea de eliminare a cartii din cosul de cumparaturi ("Remove").
+- Pagina "Login" realizeaza autentificarea prin username si parola. De asemenea, daca se incearca accesarea neautorizata a unor pagini care necesita autentificare (prin link), utilizatorul nu va putea accesa acele pagini, si va fi redirectionat la aceasta pagina de Login.
+- Pagina "Contact" are rolul de a ajuta utilizatorul sa contacteze administratorii site-ului, pentru anumite intrebari, sugestii sau nemultumiri. Datele introduse in formularul din aceasta pagina sunt stocate in baza de date, iar utilizatorul este redirectionat in pagina "Books".
+- Pagina pentru cosul de cumparaturi este disponibila fara autentificare. Aceasta contine un tabel cu toate cartile adaugate in cos, impreuna cu cantitatea adaugata si pretul corespunzator. Suma totala a cosului este prezenta sub tabel. Butonul "Pay Now" va redirectiona utilizatorul catre o pagina PayPal pentru finalizarea comenzii. Daca plata a fost realizata cu succes, in cadrul site-ului va aparea o pagina cu un mesaj corespunzator. De asemenea, si in cazul unei plati esuate va aparea un mesaj in aceasta pagina.
+
+Odata ce a avut loc autentificarea prin pagina "Login", utilizatorul are acces la paginile:
+
+- "Manage library": contine un tabel cu toate cartile din baza de date, pe care utilizatorul le poate modifica prin butonul "Edit" sau le poate sterge prin butonul "Delete". De asemenea, pot fi adaugate carti noi, prin completarea unui formular cu detaliile corespunzatoare. Tabelul cu toate cartile poate fi filtrat dupa categoria acestora prin dropdown-ul situat la inceputul paginii.
+- "Book categories": contine un tabel cu toate categoriile de carti din baza de date, pe care utilizatorul le poate modifica prin butonul "Edit" sau le poate sterge prin butonul "Delete". Stergerea unei categorii va duce automat si la stergerea tuturor cartilor din acea categorie. De asemenea, pot fi adaugate categorii noi prin butonul "Create New Category", care va deschide o pagina unde se va introduce numele categoriei noi. Categoria nou creata va fi vizibila in dropdown-ul pentru filtrare din pagina "Manage library", dar si in formularul pentru adaugarea unei noi carti mentionat mai sus.
+- "Users": contine un tabel cu toti utilizatorii din baza de date. Detaliile acestora pot fi modificate prin butonul "Edit", fara a modifica username-ul pe baza caruia se face autentificarea. De asemenea, utilizatorii pot fi stersi prin butonul "Delete". Crearea unui utilizator nou se face prin butonul "Add new", urmand sa se introduca detaliile acestuia printr-un formular. By default, Last Login este null pana cand utilizatorul nou creat se logheaza pe site.
